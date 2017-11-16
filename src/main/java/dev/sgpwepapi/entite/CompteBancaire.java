@@ -18,6 +18,15 @@ public class CompteBancaire {
 	
 	@Column(name="IBAN")
 	private String iban;
+	
+	public CompteBancaire() {	}
+
+	public CompteBancaire(String nomBanque, String bic, String iban) {
+		super();
+		this.nomBanque = nomBanque;
+		this.bic = bic;
+		this.iban = iban;
+	}
 
 	public Integer getId() {
 		return id;

@@ -20,10 +20,21 @@ public class Collaborateur {
 	private String matricule;
 	
 	@Column(name="departement")
-	private String departement;
+	private Departement departement;
 	
 	@OneToOne
 	private CompteBancaire compte;
+	
+	public Collaborateur() {	}
+
+	public Collaborateur(String nom, String prenom, String matricule, Departement departement, CompteBancaire compte) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.matricule = matricule;
+		this.departement = departement;
+		this.compte = compte;
+	}
 
 	public Integer getId() {
 		return id;
@@ -57,11 +68,11 @@ public class Collaborateur {
 		this.matricule = matricule;
 	}
 
-	public String getDepartement() {
+	public Departement getDepartement() {
 		return departement;
 	}
 
-	public void setDepartement(String departement) {
+	public void setDepartement(Departement departement) {
 		this.departement = departement;
 	}
 
